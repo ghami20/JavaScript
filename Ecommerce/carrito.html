@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tienda en línea</title>
+  <link rel="stylesheet" href="styleCarrito.css">
+  <script src="scriptCarrito.js"></script>
+  <style>
+  </style>
+</head>
+<body>
+  <header>
+
+    <h1>Tienda en línea</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><button onclick="AccederCarrito()">Carrito </button></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section id="productos">
+      <div class="producto">
+        <img id="img-producto" src="assets/imagen-producto1.jpg" alt="Producto 1">
+        <h2>Producto 1</h2>
+        <p>Precio: $100</p>
+        <button onclick="AgregarCarrito(event)" class="agregar-carrito">Agregar al carrito</button>
+      </div>
+      
+      <div class="producto">
+        <img id="img-producto" src="assets/imagen-producto2.jpg" alt="Producto 2">
+        <h2>Producto 2</h2>
+        <p>Precio: $200</p>
+        <button onclick="AgregarCarrito(event)"  class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+    </section>
+    
+    <section id="carrito">
+
+      <h2>Carrito de compras</h2>
+      <ul id="lista-carrito">
+
+      </ul>
+      <p id="total"> </p>
+      <button id="comprar">Comprar</button>
+    </section>
+  </main>
+  
+  <footer>
+    <p>Derechos de autor &copy; 2023</p>
+  </footer>
+  
+  
+</body>
+</html>
