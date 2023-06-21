@@ -125,3 +125,17 @@
 
     display: none;
   }
+  
+  #cantidad-input {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 80px;
+    outline: none;
+  }
+  
+  #cantidad-input:focus {
+    border-color: #0066ff;
+    box-shadow: 0 0 4px rgba(0, 102, 255, 0.6);
+  }

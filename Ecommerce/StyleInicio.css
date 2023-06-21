@@ -82,4 +82,7 @@
     }
     #novedades{
         display: inline-block;
+    } .producto img {
+      width: 300px;
     }
+  
