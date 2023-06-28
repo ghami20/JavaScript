@@ -9,20 +9,32 @@
 </head>
 <body>
   <header>
-
     <h1>Tienda en línea</h1>
     <nav>
       <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Productos</a></li>
-        <li><button onclick="AccederCarrito()">Carrito </button></li>
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="carrito.html">Productos</a></li>
+        <li><button onclick="AccederCarrito()">Carrito</button></li>
       </ul>
     </nav>
+    <div id="usuario">
+      <div id="contenedor-usuario">
+       <a href="perfil.html">    <img src="ruta/al/imagen-usuario.png" alt="Usuario" id="icono-usuario"></a> 
+   
+      </div>
+    </div>
   </header>
   
   <main>
+
+    <button onclick="Todos()"> Todos</button>
+
+    <button onclick="Menor()"> Menor a 10000</button>
+
+    <button onclick="Mayor()"> Mayor a 10000</button>
     <section id="productos">
-    
+
+
     </section>
     
     <section id="carrito">
@@ -31,8 +43,8 @@
       <ul id="lista-carrito">
 
       </ul>
-      <p id="total"> </p>
-      <button id="comprar">Comprar</button>
+      <p id="total">total: </p>
+      <button id="comprar" onclick="comprar()">Comprar</button>
     </section>
   </main>
   

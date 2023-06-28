@@ -1,58 +1,78 @@
 
-   window.onload=function(){
+window.onload=function(){
 
-    var usuarios=[
-      {
+  var usuarios=[
+    {
         nombre:"gamaliel",
-        contraseña:1234
-      }, {
+        clave:"1234",
+        icon:"assets/nekoarc.jpg"
+      },
+      {
         nombre:"natanael",
-        contraseña:1234
-      }, {
+        clave:"1234",
+        icon:"assets/skull.jpg"
+      },
+      {
         nombre:"ghami",
-        contraseña:1234
+        clave:"1234",
+        icon:"assets/squidward.jpg"
       }
     ];
+    
+    
     var boton = document.getElementById("miBoton");
     boton.addEventListener("click",function(){
-        let usuario = document.getElementById("usuario").value;
-        let contraseña = document.getElementById("contrasena").value;
-        let errorU = document.getElementById("labelErrorUsuario");
-        let errorC = document.getElementById("labelErrorContraseña");
-        let formulario =document.getElementById("formulario");
-        let box = document.getElementById("chekbox").value;
-        let error = true;
-        if(usuario.length=="" || usuario.length<5){
-            errorU.style="display:block";
-            error=false;
+      let usuario = document.getElementById("usuario").value;
+      let contraseña = document.getElementById("contrasena").value;
+      let errorU = document.getElementById("labelErrorUsuario");
+      let errorC = document.getElementById("labelErrorContraseña");
+      let formulario =document.getElementById("formulario");
+      let box = document.getElementById("chekbox").value;
+      let error = true;
+      if(usuario.length=="" || usuario.length<3){
+        errorU.style="display:block";
+        error=false;
+      }else{
+        errorU.style="display:none";
+        error=true;
+      }
+      if(contraseña.length=="" || contraseña.length<3){
+        errorC.style="display:block";
+        error=false;
+      }else{
+        errorC.style="display:none";
+        error=true;
+      }
+      
+      var encontrado=true;
+      var img;
+      for (let index = 0; index < usuarios.length; index++) {
+        
+        if(error==true && usuario==usuarios[index].nombre && contraseña==usuarios[index].clave){
+          formulario.action="carrito.html";
+          encontrado=true;
+          img=usuarios[index].icon; 
+          index=usuarios.length;
         }else{
-            errorU.style="display:none";
-            error=true;
+          encontrado=false;
         }
-        if(contraseña.length=="" || contraseña.length<3){
-            errorC.style="display:block";
-            error=false;
-        }else{
-            errorC.style="display:none";
-            error=true;
-        }
-        var noencontrado=true;
-        for (let index = 0; index < usuarios.length; index++){   
-          console.log(usuarios[index].nombre);
-          console.log(usuario);
-          if(error==true && usuarios[index].nombre==usuario){
-              formulario.action="inicio.html";
-              noencontrado=true
-              index=usuarios.length;
-            }else{
-              noencontrado=false;
-            }
-          }
-          if(noencontrado==true){
-            formulario.submit();
-          }
-          
+        
+      }
+      
+      if(encontrado==true){
+        var UsuarioLogeado={
+          nombre:usuario,
+          contraseña:contraseña,
+          icon:img,
+          sesion:true
+        };
+        sessionStorage.setItem("UsuarioLogeado",JSON.stringify(UsuarioLogeado));
+        formulario.submit();
+      }else if(encontrado==false && error==true ){
+        alert("usuario no encontrado");
+      }
+
+
 
     });
-}
-
+  }

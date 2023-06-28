@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Compra</title>
+    <link rel="stylesheet" href="styleCarrito.css">
+ <script src="scriptUsuario.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="carrito.html">Productos</a></li>
+                <li><button onclick="AccederCarrito()">Carrito</button></li>
+            </ul>
+            <div id="usuario">
+                <div id="contenedor-usuario">
+                <a href="perfil.html"> <img alt="Usuario" id="icono-usuario" ></a>
+               </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h2 id="vacio">Carrito vacio</h2>
+
+        <div id="carrito">
+            <h2>Carrito de Compras</h2>
+            <ul id="lista-carrito">
+
+            </ul>
+            <p id="total"></p>
+            <button>Comprar</button>
+        </div>
+
+        <!-- Resto del contenido de la página -->
+    </main>
+</body>
+</html>
