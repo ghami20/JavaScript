@@ -163,4 +163,12 @@
 
   #vacio{
     display: none;
+  }#banner{
+
+    width:  100%;
+  }
+
+  #imagen{
+    display: none;
+    width: 300px;
   }

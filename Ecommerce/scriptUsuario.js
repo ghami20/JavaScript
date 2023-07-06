@@ -1,6 +1,4 @@
 var carrito=[];
-
-
 window.onload=function(){
 var icono = document.getElementById("icono-usuario");
    var UsuarioLogeado= sessionStorage.getItem("UsuarioLogeado");
@@ -57,4 +55,23 @@ function cerrarSesion() {
         window.location.href = "index.html";
     
   }
-  
+  function comprar(){
+
+    alert("Su compra ha sido exitosa");
+    var carritocontenedor = document.getElementById("carrito");
+        carritocontenedor.style="display:none";
+        var sesion= JSON.parse(sessionStorage.getItem("UsuarioLogeado"));
+        var compras = JSON.parse(localStorage.getItem("compras"));
+    
+    var compranueva={
+        carrito:carrito,
+        usuario:sesion
+    }
+
+    compras.push(compranueva);
+    localStorage.setItem("compras",JSON.stringify(compras));
+    carrito=[];
+    localStorage.setItem("carrito",JSON.stringify(carrito));
+
+
+}

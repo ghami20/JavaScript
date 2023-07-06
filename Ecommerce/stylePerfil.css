@@ -1,166 +1,183 @@
-* {
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
 
-  body {
-    margin: 0;
-    padding: 0;
-  }
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
 
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
-  }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
 
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
 
-  main {
-    padding: 20px;
-  }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-  section {
-    margin-bottom: 30px;
-  }
+        main {
+            padding: 20px;
+            flex: 1;
+        }
 
-  h2 {
-    color: #333;
-  }
+        section {
+            margin-bottom: 30px;
+        }
 
-  .producto {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
+        h2 {
+            color: #333;
+        }
 
-  .producto img {
-    max-width: 100%;
-  }
+        .producto {
+        
+            padding: 10px;
+            margin-bottom: 10px;
+        }
 
-  .agregar-carrito {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
+        .producto img {
+            max-width: 100%;
+        }
 
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  #img-banner {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  .producto img {
-    width: 300px;
-  }
-  
-  #destacados, #novedades {
-    display: inline-block;
-  }
+        .agregar-carrito {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
 
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
 
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-  }
+        #img-banner {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
-  .modal h2 {
-    margin-top: 0;
-  }
+        .producto img {
+            width: 300px;
+        }
 
-  .modal-close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-  }
+        #destacados,
+        #novedades {
+            display: inline-block;
+        }
 
-  .modal-close:hover,
-  .modal-close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
 
-  #carrito{
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
 
-    display: none;
-  }
-  
-  #cantidad-input {
-    padding: 12px;
-    border: 2px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    width: 80px;
-    outline: none;
-  }
-  
-  #cantidad-input:focus {
-    border-color: #0066ff;
-    box-shadow: 0 0 4px rgba(0, 102, 255, 0.6);
-  }
-  #usuario {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    align-items: center;
-  }
-  
-  #icono-usuario {
-    width: 100px;
-    height: 100px;
-    margin-right: 5px;
-    border-radius: 50%;
+        .modal h2 {
+            margin-top: 0;
+        }
+
+        .modal-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal-close:hover,
+        .modal-close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #carrito {
+            display: none;
+        }
+
+        #cantidad-input {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 80px;
+            outline: none;
+        }
+
+        #cantidad-input:focus {
+            border-color: #0066ff;
+            box-shadow: 0 0 4px rgba(0```css
+        #ddd, 102, 255, 0.6);
+        }
+
+        #usuario {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        #icono-usuario {
+            width: 100px;
+            height: 100px;
+            margin-right: 5px;
+            border-radius: 50%;
+            border: 2px solid rgb(93, 86, 93);
+        }
+
+        #contenedor-usuario {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        #informacion-usuario {
+            margin-top: 50px;
+            text-align: center;
+        }
+   .Compras{
     border: 2px solid rgb(93, 86, 93);
-  }
-  #contenedor-usuario {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-  }
 
-  #vacio{
-    display: none;
-  }
+    margin-bottom: 20px;
+    list-style: none;
+
+}
+

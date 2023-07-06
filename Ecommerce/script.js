@@ -1,6 +1,6 @@
 
 window.onload=function(){
-
+/*
   var usuarios=[
     {
         nombre:"gamaliel",
@@ -10,15 +10,22 @@ window.onload=function(){
       {
         nombre:"natanael",
         clave:"1234",
-        icon:"assets/skull.jpg"
+        icon:"assets/skull.jpg",
+        tipo:NOR
+        
       },
       {
         nombre:"ghami",
         clave:"1234",
         icon:"assets/squidward.jpg"
+        tipo:ADM
       }
     ];
-    
+
+    localStorage.setItem("Usuarios",JSON.stringify(usuarios));
+    */
+   var locals = localStorage.getItem("Usuarios");
+   var usuarios= JSON.parse(locals);
     
     var boton = document.getElementById("miBoton");
     boton.addEventListener("click",function(){

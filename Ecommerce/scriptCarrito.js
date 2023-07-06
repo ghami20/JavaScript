@@ -1,5 +1,4 @@
 var carrito=[];
-
 var productos = [{
     img:"assets/imagen-producto1.jpg",
     nombre:"Samsung Galaxy S22 Ultra",
@@ -210,10 +209,15 @@ function AgregarCarrito(event){
         carrito.push(producto);
     }
     localStorage.setItem("carrito",JSON.stringify(carrito));
+    document.getElementById("imagen").style="display:block"
+    setInterval('campanita()', 500000);
+    //alert("Producto agregado");
     
+}
 
-//alert("Producto agregado");
-
+function campanita(){
+    localStorage.setItem("carrito",JSON.stringify(carrito));
+    document.getElementById("imagen").style="display:none"
 }
 
 function AccederCarrito(){
@@ -267,6 +271,19 @@ function comprar(){
     alert("Su compra ha sido exitosa");
     var carritocontenedor = document.getElementById("carrito");
         carritocontenedor.style="display:none";
+        var sesion= JSON.parse(sessionStorage.getItem("UsuarioLogeado"));
+        var compras = JSON.parse(localStorage.getItem("compras"));
+       
 
+    var compranueva={
+        carrito:carrito,
+        usuario:sesion
+    }
+
+    compras.push(compranueva);
+    console.log(compras);
     carrito=[];
+    localStorage.setItem("compras",JSON.stringify(compras));
+
+
 }
